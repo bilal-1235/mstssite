@@ -6,7 +6,7 @@ import { BsInfoCircle, BsSearch } from "react-icons/bs";
 import { FaBars, FaFileContract } from "react-icons/fa";
 
 import '../styles.css'; 
-import  login from '../compontents/Loginform'
+
 import { useNavigate } from 'react-router-dom';
 
 
@@ -28,9 +28,9 @@ const navigate = useNavigate(); // Use the useNavigate hook to programmatically 
         <Navbar.Toggle aria-controls="navbar-nav" />
         <Navbar.Collapse id="navbar-nav">
           <Nav className="ms-auto">
-          <Nav.Link href="#" className="d-flex align-items-center ms-3">
-              <span className="me-1"><BsInfoCircle size={18} /></span>
-              <span>Help</span>
+          <Nav.Link href="#" className="d-flex align-items-center ms-3 ">
+              <span className="me-2 mb-1 "><BsInfoCircle size={18} /></span>
+              <span >Help</span>
             </Nav.Link>
             <div className=" d-flex align-items-center "  onClick={toggleMenu}  style={{ cursor: 'pointer' }} >
                 <FaBars size={22} />
@@ -52,7 +52,7 @@ const navigate = useNavigate(); // Use the useNavigate hook to programmatically 
     <Offcanvas.Body>
       <Nav className="flex-column">
       <div className="d-grid gap-2">
-      <button onClick={() => navigate("/login")} className="  custom-login-btn" type="button">login </button>
+      <button onClick={() => navigate("/login")} className="  custom-login-btn" type="button">Login </button>
       <button className="custom-login-btn" type="button">Sign up</button>
       </div>
       <div className=" align-items-center justify-content-center d-flex flex-row gap-3  mt-4 ">

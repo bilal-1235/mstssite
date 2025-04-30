@@ -24,4 +24,22 @@
     background-color: #f2f2f2;
     border-color: #00adee;
   }
+  .login-btn {
+    background-color: #00adee !important;
+    border: none;
+    color: white;
+  }
+  
+  .login-btn:hover {
+    background-color: #097ea5 !important;
+  }
+  .signup-btn {
+    background-color: #ebeeef !important;
+    border: none !important;
+    color: black !important;
+  }
+  .signup-btn:hover {
+    background-color: #a1a2a2 !important;
+    border: none !important;
+  }
   

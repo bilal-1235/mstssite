@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
-import '../compontents/login.css'; // Optional for custom styles
+import '../styles.css'; 
 
 const Login: React.FC = () => {
   return (
@@ -26,11 +26,22 @@ const Login: React.FC = () => {
 
         <div className="text-center">
           <Button
-            className="w-100 custom-login-btn"
+            className=" w-100 login-btn"
             type="submit"
           >
             Login
           </Button>
+          <Col className="text-start mt-3">
+            <a href="#">Not a Member</a>
+          </Col>
+          <Button
+            className="w-100 signup-btn  mt-3"
+            type="submit"
+          >
+            Sign up
+          </Button>
+           <p className="text-top d-flex align-items-start mt-3">By signin into your account you agree to our Terms & Conditions, Privacy Policy & Cookies Policy.</p>
+
         </div>
       </Form>
     </Container>
