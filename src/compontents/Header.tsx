@@ -1,6 +1,7 @@
 import React from 'react';
 import { Navbar, Nav, Container } from 'react-bootstrap';
 import  logo from '../assets/logo/logo.png'; // Adjust the path as necessary
+import { FaInfoCircle } from 'react-icons/fa';
 const Header: React.FC = () => {
   return (
     <Navbar style={{ backgroundColor: '#00adee' }}  expand="lg">
@@ -11,7 +12,10 @@ const Header: React.FC = () => {
         <Navbar.Toggle aria-controls="navbar-nav" />
         <Navbar.Collapse id="navbar-nav">
           <Nav className="ms-auto">
-            <Nav.Link href="#">Help</Nav.Link>
+          <Nav.Link href="#" className="d-flex align-items-center ms-3">
+              <span className="me-1"><FaInfoCircle size={18} /></span>
+              <span>Help</span>
+            </Nav.Link>
             
           </Nav>
         </Navbar.Collapse>
