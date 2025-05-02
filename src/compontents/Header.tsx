@@ -12,7 +12,9 @@ import { useNavigate } from 'react-router-dom';
 
 const Header: React.FC = () => {
   const [showMenu, setShowMenu] = useState(false);
-const navigate = useNavigate(); // Use the useNavigate hook to programmatically navigate
+const login = useNavigate(); 
+const signup = useNavigate();
+
   const toggleMenu = () => setShowMenu(!showMenu);
   const closeMenu = () => setShowMenu(false);
 
@@ -22,7 +24,7 @@ const navigate = useNavigate(); // Use the useNavigate hook to programmatically 
     <>
     <Navbar style={{ backgroundColor: '#00adee' }}  expand="lg">
       <Container>
-      <a className="navbar-brand" href="#">
+      <a className="navbar-brand" href="http://localhost:3000/">
           <img src={logo} alt="Logo" height="40" />
         </a>
         <Navbar.Toggle aria-controls="navbar-nav" />
@@ -52,8 +54,8 @@ const navigate = useNavigate(); // Use the useNavigate hook to programmatically 
     <Offcanvas.Body>
       <Nav className="flex-column">
       <div className="d-grid gap-2">
-      <button onClick={() => navigate("/login")} className="  custom-login-btn" type="button">Login </button>
-      <button className="custom-login-btn" type="button">Sign up</button>
+      <button onClick={() => login ("/login")} className="  custom-login-btn" type="button">Login </button>
+      <button onClick= {() => signup ("/signup")}  className="custom-login-btn" type="button">Signup</button>
       </div>
       <div className=" align-items-center justify-content-center d-flex flex-row gap-3  mt-4 ">
       <div className="border rounded text-center sidebar-item">

@@ -1,19 +1,37 @@
-import React from 'react';
-import { Container, Row, Col, Form, Button } from 'react-bootstrap';
+import React ,{useState}  from 'react';
+
+import { Card, Row, Col,InputGroup, Form, Button } from 'react-bootstrap';
 import '../styles.css'; 
+import { FiPhone } from "react-icons/fi";
+import { BsTelephone } from "react-icons/bs";
+import 'react-phone-number-input/style.css'
+import PhoneInput from 'react-phone-number-input'
 
 const Login: React.FC = () => {
+  const [country, setcountry] = useState<string | undefined>();
   return (
-    <Container className="d-flex flex-column align-items-center justify-content-center" style={{ minHeight: '100vh' }}>
-      <div className="text-center mb-4">
-        <h2>Welcome Back</h2>
-        <p>You can login with email or mobile number</p>
+    <div className="d-flex justify-content-center align-items-center min-vh-100 bg-light " >
+    <Card className=" shadow p-4" style={{ maxWidth: '450px', width: '100%', borderRadius: '0px' }}>
+      <div className=" d-flex flex-column align-items-start justify-content-start">
+        <h2 className = "fw-bold">  Welcome Back</h2>
+        <p className = " text-muted">  You can login with email or mobile number</p>
       </div>
 
       <Form style={{ width: '100%', maxWidth: '400px' }}>
-        <Form.Group controlId="loginInput" className="mb-2">
-          <Form.Control type="text" placeholder="Enter email or phone number" />
-        </Form.Group>
+       
+        <InputGroup className="mb-3 text-muted">
+         <InputGroup.Text>
+              <BsTelephone  size={22} />
+              
+        </InputGroup.Text>
+        <PhoneInput
+         className="custom-phone-input"
+                defaultCountry="US"
+                international
+                countryCallingCodeEditable={false}
+                  value={country}
+                  onChange={setcountry} type="phonenumber" placeholder="Enter Your Phone Number"/>
+          </InputGroup>
 
         <Row className="mb-3">
           <Col className="text-start">
@@ -32,7 +50,7 @@ const Login: React.FC = () => {
             Login
           </Button>
           <Col className="text-start mt-3">
-            <a href="#">Not a Member</a>
+            <a href="#">Not a Member ? </a>
           </Col>
           <Button
             className="w-100 signup-btn  mt-3"
@@ -40,11 +58,16 @@ const Login: React.FC = () => {
           >
             Sign up
           </Button>
-           <p className="text-top d-flex align-items-start mt-3">By signin into your account you agree to our Terms & Conditions, Privacy Policy & Cookies Policy.</p>
+           <p className=" mt-2 text-center small text-muted ">
+           By signing into your account you agree to our{' '}
+            <a href="#">Terms & Conditions</a>,{' '}
+            <a href="#">Privacy Policy</a> & <a href="#">Cookies Policy</a>.</p>
 
+            
         </div>
       </Form>
-    </Container>
+    </Card>
+    </div>
   );
 };
 

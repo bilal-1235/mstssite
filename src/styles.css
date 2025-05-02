@@ -42,4 +42,107 @@
     background-color: #a1a2a2 !important;
     border: none !important;
   }
+  .input-group-text {
+    border: 1px !important;
+    border-radius: 0 !important;
+    background-color: transparent !important;
+ 
+  }
+  .custom-input-group {
+    border-bottom: 2px solid #00adee !important;
+    border-radius: 0;
+    padding-bottom: 5px;
+  }
   
+  /* Icon styling */
+  .custom-icon {
+    border: none;
+    background-color: transparent;
+    color: #aaa;
+    padding-right: 10px;
+  }
+  
+  /* Phone input customization */
+  .custom-phone-input input {
+    border: none;
+    outline: none;
+    box-shadow: none;
+    border-radius: 0;
+    width: 100%;
+    color: #333;
+    font-size: 1rem;
+    background-color: transparent;
+  }
+  
+  .custom-phone-input input::placeholder {
+    color: #aaa;
+    border: none;
+  }
+  /* Remove default input styling */
+.custom-input .form-control,
+.phone-input input {
+  
+  border-bottom: 1px solid #1f1f1f;
+  border-radius: 0;
+  box-shadow: none;
+  background-color: transparent;
+}
+
+/* Icons */
+.icon {
+  background-color: transparent;
+  border: none;
+  color: #aaa;
+}
+
+/* Captcha box style */
+.captcha-display {
+  font-style: italic;
+  text-transform: lowercase;
+  background-color: #f2f2f2;
+  border: none;
+  border-radius: 5px 0 0 5px;
+}
+
+/* Refresh button */
+.refresh-btn {
+  background-color: yellow;
+  border: none;
+  border-radius: 0 5px 5px 0;
+}
+
+/* Continue Button */
+
+
+.continue-btn {
+  background-color: #00adee !important;
+  color: white !important;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+  border: none !important;
+}
+
+.continue-btn:hover {
+  background-color: #0b7ea8 !important;
+}
+
+
+/* Checkbox text */
+form .form-check-label {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* Link styling */
+a {
+  color: #000;
+  text-decoration: underline;
+}
+
+
+
+
+
+
