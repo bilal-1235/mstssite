@@ -8,7 +8,7 @@ import Footer from './compontents/Footer';
 import Home from './compontents/Home';
 import Card from './compontents/card';
 import Slider from './compontents/Slider';
-
+import Help from './compontents/Help';
 const App: React.FC = () => {
   return (
     <div className="mstssite">
@@ -18,6 +18,7 @@ const App: React.FC = () => {
           <Route path="/" element={<><Home/><Card/> <Slider/> <Footer /></>} />
           <Route path="/login" element={<><Login /><Footer /></>} />
           <Route path="/signup" element={<><Signup /><Footer /></>} />
+          <Route path="/help" element={<><Help /><Footer /></>} />
         </Routes>
       </Router>
     </div>

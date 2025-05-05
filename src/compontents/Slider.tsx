@@ -4,7 +4,8 @@ import img3 from '../assets/slider/img3.jpeg';
 import img4 from '../assets/slider/img4.jpeg';
 import img5 from '../assets/slider/img5.jpeg';
 import img6 from '../assets/slider/img6.jpeg';
-import  backgroundsection from '../assets/herosection/backgroundsection.svg'; // Adjust the path as necessa Import Swiper styles
+import  backgroundsection from '../assets/herosection/backgroundsection.svg'; 
+import  giftcardbg from  '../assets/Giftcardbg/gift-card-icon2.png';
 import 'swiper/css';
 import 'swiper/css/pagination';
 
@@ -70,6 +71,48 @@ export default function App() {
      
   </Row>
 </Card>
-        </>
-       );
+<Card className='mx-5 mb-5'>
+<Row className="align-items-start justify-content-start text-center">
+<Col>
+<Card className=" mx-5 mb-5 mt-5 border-0 shadow rounded-4 overflow-hidden ">
+  <div className="   text-dark p-5 px-4"  style={{ backgroundColor: '#00adee',
+    backgroundImage: `url(${giftcardbg})`,
+    
+    backgroundPosition: 'top right',
+    backgroundRepeat: 'no-repeat',
+     backgroundSize: 'auto',
+  }}>
+    <h5 className="fw-bold text-start ">Gift Card</h5>
+    <p className=" text-start mt-1 mb-0">Surprise your loved ones with a gift</p>
+    </div>
+
+   
+    
+    
+
+  <div className=" text-start bg-white px-4 py-3">
+    <span className="  border border-dark px-3 py-2 fw-bold d-inline-block">MR T’s</span>
+  </div>
+</Card>
+</Col>
+
+      
+    
+     <Col>
+    <div className="text-start py-5 px-5">
+      <h2>
+      Treat your friend with a MR Ts Gift Card
+        </h2>
+        <p className="text-muted text-start">Whether you want to treat to Mom Friday 
+          night favorite or surprise your mate with a "special on me". Show you care the tasty way</p>
+          <p className="text-decoration-underline fw-bold text-start">
+            Get Your Gift card now 
+          </p>
+    </div>
+     </Col>
+     </Row>
+     </Card>
+     
+  </>
+ );
     }
