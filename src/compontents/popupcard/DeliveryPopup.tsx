@@ -1,12 +1,15 @@
 import React from 'react';
 import { Modal, Button, Form } from 'react-bootstrap';
 import { ArrowLeft } from 'react-bootstrap-icons';
-import bgpopup from './popuplogo/bgpopup.png'; // Adjust the path as necessary
+import bgpopup from './popuplogo/bgpopup.png'; 
+
+
 
 interface DeliveryPopupProps {
   show: boolean;
   onClose: () => void;
 }
+
 
 const DeliveryPopup: React.FC<DeliveryPopupProps> = ({ show, onClose }) => {
   return (

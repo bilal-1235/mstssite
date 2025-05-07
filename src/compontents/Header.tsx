@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom';
 import DiscoverSidebar from './discoversidear';
 import LegalSidebar from './LegalSidebar';
 import HelpSidebar from './helpsidebar';
-import  help from './Help';
+
 import '../styles.css';
 
 const Header: React.FC = () => {
@@ -18,7 +18,6 @@ const Header: React.FC = () => {
   const [showHelp, setShowHelp] = useState(false);
 
   const navigate = useNavigate();
-
 
   const toggleMenu = () => setShowMenu(!showMenu);
   const closeMenu = () => setShowMenu(false);
@@ -32,11 +31,11 @@ const Header: React.FC = () => {
     setShowMenu(false);
     setShowLegal(true);
   };
+
   const openHelpSidebar = () => {
     setShowMenu(false);
     setShowHelp(true);
   };
-
 
   const closeDiscoverSidebar = () => setShowDiscover(false);
   const closeLegalSidebar = () => setShowLegal(false);
@@ -44,25 +43,29 @@ const Header: React.FC = () => {
 
   return (
     <>
-      <Navbar style={{ backgroundColor: '#00adee' }} expand="lg">
+      <Navbar style={{ backgroundColor: '#00adee' }} expand="lg" className="py-2">
         <Container>
-          <a className="navbar-brand" href="/">
+          <Navbar.Brand href="/">
             <img src={logo} alt="Logo" height="40" />
-          </a>
-          <Navbar.Toggle aria-controls="navbar-nav" />
-          <Navbar.Collapse id="navbar-nav">
-            <Nav className="ms-auto">
-              <Nav.Link href="#" className="d-flex align-items-center ms-3"  onClick={() => {
+          </Navbar.Brand>
+
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="ms-auto align-items-center gap-3">
+              <Nav.Link
+                onClick={() => {
                   navigate('/help');
-                 
-                }}>
-                <span className="me-2 mb-1">
-                  <BsInfoCircle size={18} />
-                </span>
-                <span>Help</span>
-              </Nav.Link>
-              <div
+                }}
                 className="d-flex align-items-center"
+              >
+                <BsInfoCircle size={18} className="me-2" />
+                Help
+              </Nav.Link>
+
+              {/* Mobile menu icon */}
+              <div
+                className="d-lg-none d-flex align-items-center"
                 onClick={toggleMenu}
                 style={{ cursor: 'pointer' }}
               >
@@ -70,6 +73,15 @@ const Header: React.FC = () => {
               </div>
             </Nav>
           </Navbar.Collapse>
+
+          {/* Desktop menu icon */}
+          <div
+            className="d-none d-lg-flex align-items-center"
+            onClick={toggleMenu}
+            style={{ cursor: 'pointer' }}
+          >
+            <FaBars size={22} />
+          </div>
         </Container>
       </Navbar>
 
@@ -102,9 +114,10 @@ const Header: React.FC = () => {
               </button>
             </div>
 
-            <div className="d-flex flex-row gap-3 mt-4 justify-content-center">
+            <div className="d-flex flex-wrap gap-3 mt-4 justify-content-center">
               <div
-                className="border rounded text-center sidebar-item"
+                className="border rounded text-center sidebar-item p-3 flex-fill"
+                style={{ minWidth: '90px' }}
                 onClick={openDiscoverSidebar}
               >
                 <BsSearch size={30} color="#888" />
@@ -112,15 +125,19 @@ const Header: React.FC = () => {
               </div>
 
               <div
-                className="border rounded text-center sidebar-item"
+                className="border rounded text-center sidebar-item p-3 flex-fill"
+                style={{ minWidth: '90px' }}
                 onClick={openLegalSidebar}
               >
                 <FaFileContract size={30} color="#888" />
                 <div className="mt-2">Legal</div>
               </div>
 
-              <div className="border rounded text-center sidebar-item"onClick={openHelpSidebar}>
-
+              <div
+                className="border rounded text-center sidebar-item p-3 flex-fill"
+                style={{ minWidth: '90px' }}
+                onClick={openHelpSidebar}
+              >
                 <BsInfoCircle size={30} color="#888" />
                 <div className="mt-2">Help</div>
               </div>
@@ -136,7 +153,7 @@ const Header: React.FC = () => {
           setShowDiscover(false);
           setShowMenu(true);
         }}
-         title="Discover"
+        title="Discover"
       />
 
       <LegalSidebar
@@ -146,16 +163,17 @@ const Header: React.FC = () => {
           setShowLegal(false);
           setShowMenu(true);
         }}
-        title='Legal'
+        title="Legal"
       />
-       <HelpSidebar
+
+      <HelpSidebar
         show={showHelp}
         onClose={closeHelpSidebar}
         onBack={() => {
           setShowHelp(false);
           setShowMenu(true);
         }}
-         title='Help'
+        title="Help"
       />
     </>
   );

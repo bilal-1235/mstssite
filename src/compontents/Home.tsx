@@ -13,18 +13,17 @@ import mobileview from '../assets/herosection/Mobileimg.png';
 import backgroundsection from '../assets/herosection/backgroundsection.svg';
 import PopupCard from './popupcard/popupcard';
 import DeliveryPopup from './popupcard/DeliveryPopup';
-import ClickCollectPopup  from './popupcard/click-collectcard';
-
+import ClickCollectPopup from './popupcard/click-collectcard';
 
 const HeroSection = () => {
   const [showPopup, setShowPopup] = useState(false);
   const [showDeliveryPopup, setShowDeliveryPopup] = useState(false);
   const [showClickCollectPopup, setShowClickCollectPopup] = useState(false); 
   const [showFindStorePopup, setShowFindStorePopup] = useState(false);  
-  
 
   return (
     <>
+      {/* Hero Section */}
       <div
         className="position-relative d-flex align-items-center justify-content-center text-center text-white"
         style={{
@@ -52,139 +51,131 @@ const HeroSection = () => {
             >
               Order Now
             </Button>
-
-            <PopupCard
-              show={showPopup}
-              onClose={() => setShowPopup(false)}
-              onDeliveryClick={() => {
-                setShowPopup(false);
-                setShowDeliveryPopup(true);
-              }}
-              
-
-
-              onClickCollect={() => {
-                
-                setShowPopup(false);
-                setShowClickCollectPopup(true);
-                
-              }}
-              onFindStore={() => {
-                setShowPopup(false);
-                setShowFindStorePopup(true);
-              }}
-            />
-
-            <DeliveryPopup
-             show={showDeliveryPopup}
-              onClose={() => {
-               setShowDeliveryPopup(false);      // close delivery popup
-                setShowPopup(true);               // go back to previous popup
-               }}
-                />
-               <ClickCollectPopup
-  show={showClickCollectPopup}
-  onClose={() => {
-    setShowClickCollectPopup(false);
-    setShowPopup(true);
-  }}
-/>
           </div>
         </Container>
       </div>
-      <div className="d-flex align-items-center justify-content-between px-5 py-4 mx-10 my-10"  style={{
-    backgroundColor: '#f9f9f9',
-    marginLeft: '10rem',
-    marginRight: '10rem',
-    marginTop: '2rem',
-    marginBottom: '2rem',
-  }}>
-  <div>
-    <h3 className="fw-bold mb-0">CLICK + COLLECT</h3>
-    <h4 className="fw-bold text-secondary">TAKEAWAY + PICKUP</h4>
-  </div>
 
-  <Button onClick={() => setShowPopup(true)}
-            
-    className="fw-bold px-4 py-3"
-    style={{
-      backgroundColor: '#00adee',
-      color: '#fffff',
-      border: 'none',
-      fontWeight: 800,
-      fontSize: '1.25rem',
-      borderRadius: '0.5rem',
-    }}
-  >
-    ORDER NOW
-  </Button>
+      {/* Popups */}
+      <PopupCard
+        show={showPopup}
+        onClose={() => setShowPopup(false)}
+        onDeliveryClick={() => {
+          setShowPopup(false);
+          setShowDeliveryPopup(true);
+        }}
+        onClickCollect={() => {
+          setShowPopup(false);
+          setShowClickCollectPopup(true);
+        }}
+        onFindStore={() => {
+          setShowPopup(false);
+          setShowFindStorePopup(true);
+        }}
+      />
+      <DeliveryPopup
+        show={showDeliveryPopup}
+        onClose={() => {
+          setShowDeliveryPopup(false);
+          setShowPopup(true);
+        }}
+      />
+      <ClickCollectPopup
+        show={showClickCollectPopup}
+        onClose={() => {
+          setShowClickCollectPopup(false);
+          setShowPopup(true);
+        }}
+      />
 
+      {/* Click + Collect Section */}
+      <Container className="py-4" style={{ backgroundColor: '#f9f9f9' }}>
+        <Row className="align-items-center text-center text-md-start g-3">
+          <Col xs={12} md={4}>
+            <h3 className="fw-bold mb-1">CLICK + COLLECT</h3>
+            <h4 className="fw-bold text-secondary">TAKEAWAY + PICKUP</h4>
+          </Col>
+          <Col xs={12} md={4}>
+            <Button
+              onClick={() => setShowPopup(true)}
+              className="w-100 fw-bold px-4 py-3"
+              style={{
+                backgroundColor: '#00adee',
+                color: '#ffffff',
+                border: 'none',
+                fontWeight: 800,
+                fontSize: '1.25rem',
+                borderRadius: '0.5rem',
+              }}
+            >
+              ORDER NOW
+            </Button>
+          </Col>
+          <Col xs={12} md={4}>
+            <img
+              src={arrowImg}
+              alt="Arrow"
+              className="img-fluid mx-auto d-block"
+              style={{ maxWidth: '60px' }}
+            />
+          </Col>
+        </Row>
+      </Container>
 
-    <img src={arrowImg} alt="Arrow" />
-  
-</div>
+      {/* Feature Images Section */}
+      <Container fluid className="py-5 px-lg-5 px-3" style={{ backgroundColor: '#f9f9f9' }}>
+        <Row className="justify-content-center text-center g-4 mb-4">
+          <Col xs={12} sm={6}>
+            <img src={freshimg} alt="Fresh Taste" className="img-fluid rounded" />
+          </Col>
+          <Col xs={12} sm={6}>
+            <img src={badboyimg} alt="Bad Boy" className="img-fluid rounded" />
+          </Col>
+        </Row>
+        <Row className="text-center g-4">
+          <Col xs={12} sm={6} md={4}>
+            <img src={hotshot} alt="Hotshot" className="img-fluid rounded" />
+          </Col>
+          <Col xs={12} sm={6} md={4}>
+            <img src={Tsspeacil} alt="Tsspecial" className="img-fluid rounded" />
+          </Col>
+          <Col xs={12} sm={6} md={4}>
+            <img src={Gypsyking} alt="Gypsyking" className="img-fluid rounded" />
+          </Col>
+        </Row>
+      </Container>
 
-
-      <Container fluid className="py-5 px-5" style={{ backgroundColor: '#f9f9f9' }}>
-
-
-<Row className="align-items-center justify-content-center text-center">
-<Col><img src={freshimg} alt="Arrow" className="mt-2 mb-2 rounded " /></Col>
-<Col><img src={badboyimg} alt="Arrow" className="mt-2 mb-2 rounded " /></Col>
-</Row>
-<Row className="align-items-start justify-content-start text-center">
-<Col xs={12} sm={4}>
-<img src={hotshot} alt="Hotshot" className="img-fluid mt-2 mb-2 rounded" />
-</Col>
-<Col xs={12} sm={4}>
-<img src={Tsspeacil} alt="Tsspecial" className="img-fluid mt-2 mb-2 rounded" />
-</Col>
-<Col xs={12} sm={4}>
-<img src={Gypsyking} alt="Gypsyking" className="img-fluid mt-2 mb-2 rounded" />
-</Col>
-</Row>
-
-</Container>
-
-<Card className="py-2 px-5 mt-5 mb-5 mx-5"  style={{
-backgroundImage: `url(${backgroundsection})`,
-backgroundSize: 'cover',
-backgroundPosition: 'center',
-backgroundRepeat: 'no-repeat',
-}}>
-<Row className="align-items-center justify-content-between">
-
-
-<Col md={6}>
-<h2 className="fw-bold fs-1">Download the app</h2>
-<p className="text-muted">
-  Click, sit back, and enjoy and get more value in our mobile app
-</p>
-
-<Row className="mt-3">
-  <Col xs="auto">
-    <img src={googleplay} alt="Google Play" />
-  </Col>
-  <Col xs="auto">
-    <img src={appstore} alt="App Store" />
-  </Col>
-</Row>
-</Col>
-
-<Col md={6} className="d-flex justify-content-end">
-<img
-  src={mobileview}
-  alt="App Preview"
-  className="img-fluid mt-2 mb-2 rounded"
-  style={{ maxHeight: '400px' }}
-/>
-</Col>
-
-</Row>
-</Card>
-
-
-
+      {/* Download App Section */}
+      <Card className="py-5 px-3 px-lg-5 mt-5 mb-5 mx-3 mx-lg-5" style={{
+        backgroundImage: `url(${backgroundsection})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+      }}>
+        <Row className="align-items-center text-center text-md-start g-4">
+          <Col xs={12} md={6}>
+            <h2 className="fw-bold fs-1">Download the app</h2>
+            <p className="text-muted">
+              Click, sit back, and enjoy and get more value in our mobile app
+            </p>
+            <Row className="mt-3 justify-content-center justify-content-md-start">
+              <Col xs="auto">
+                <img src={googleplay} alt="Google Play" />
+              </Col>
+              <Col xs="auto">
+                <img src={appstore} alt="App Store" />
+              </Col>
+            </Row>
+          </Col>
+          <Col xs={12} md={6} className="d-flex justify-content-center justify-content-md-end">
+            <img
+              src={mobileview}
+              alt="App Preview"
+              className="img-fluid rounded"
+              style={{ maxHeight: '400px' }}
+            />
+          </Col>
+        </Row>
+      </Card>
     </>
   );
 };

@@ -1,13 +1,13 @@
 /* customButton.css */
 .custom-login-btn {
-    background-color: #00adee;
-    border: none; /* no border */
-    color: white;
-    border-radius: 8px;  
-    transition: background-color 0.3s ease; /* smooth hover */
-    padding: 10px 24px;
-    
-  }
+  background-color: #00adee;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  width: 100%;
+}
   
   .custom-login-btn:hover {
     background-color: #008bbf; /* darker blue on hover */
@@ -16,14 +16,12 @@
   }
   .sidebar-item {
     cursor: pointer;
-    transition: all 0.2s ease;
-    padding: 10px 24px;
+    transition: all 0.3s ease;
+  }
+  .sidebar-item:hover {
+    background-color: #f5f5f5;
   }
   
-  .sidebar-item:hover {
-    background-color: #f2f2f2;
-    border-color: #00adee;
-  }
   .login-btn {
     background-color: #00adee !important;
     border: none;
