@@ -11,9 +11,9 @@ import Slider from './compontents/Slider';
 import Help from './compontents/Help';
 import Contactus from './compontents/Contactform';
 import { CartProvider } from "./compontents/Context/CardContext"; 
-import ProductPage from "./compontents/Pages/ProductPage";       
-import CartPage from "./compontents/Pages/CartPage";             
-import CheckoutPage from "./compontents/Pages/CheckoutPage";     
+import ProductList from './compontents/Context/ProductList';
+import CartPage from './compontents/Context/CartPage';
+    
 
 const App: React.FC = () => {
   return (
@@ -27,13 +27,9 @@ const App: React.FC = () => {
             <Route path="/signup" element={<><Signup /><Footer /></>} />
             <Route path="/help" element={<><Help /><Footer /></>} />
             <Route path="/contactform" element={<><Contactus /><Footer /></>} />
-            <Route path="/products" element={<><ProductPage /><Footer /></>} />
-
-
+            <Route path="/ProductList" element={ <><ProductList /> <Footer /></>} />
+            <Route path="/CartPage" element={<><CartPage /> <Footer /> </>} />
             
-            
-            <Route path="/cart" element={<><CartPage /><Footer /></>} />
-            <Route path="/checkout" element={<><CheckoutPage /><Footer /></>} />
 
           </Routes>
         </Router>

@@ -6,6 +6,7 @@ import { FaBriefcase } from "react-icons/fa";
 import { GoLocation } from 'react-icons/go';
 import { AiOutlineMenuUnfold } from "react-icons/ai";
 import { useNavigate } from 'react-router-dom';
+import Product from './Context/ProductList';
 
 
 interface Props {
@@ -54,12 +55,13 @@ const DiscoverSidebar: React.FC<Props> = ({ show, onClose, onBack, title }) => {
             <IconButton icon={<FaBriefcase />} label="Careers" />
           </div>
           <div className="col-6">
-            <div onClick={() => {navigate('/products');
-              onClose();
-            }}
-            >
-              <IconButton icon={<GoLocation />} label="Location" />
-            </div>
+          <div onClick={() => {
+  navigate('/ProductList');
+  onClose();
+}}>
+  <IconButton icon={<GoLocation />} label="Location" />
+</div>
+
           </div>
           <div className="col-6">
             <IconButton icon={<AiOutlineMenuUnfold />} label="Menu" />
